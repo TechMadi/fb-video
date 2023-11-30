@@ -11,9 +11,11 @@ import { FireService } from './firebase/fire.service';
 })
 export class AppComponent {
   title = 'angular-firebase';
+ newMessage:any;
+ email:any
+ password:any
+ constructor(public fireService:FireService){
 
-
- constructor(private fireService:FireService){
 
  }
   getAll(){
