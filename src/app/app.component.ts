@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { collectionData } from '@angular/fire/firestore';
+import { Firestore, collection } from 'firebase/firestore';
+import { Observable } from 'rxjs';
+import { FireService } from './firebase/fire.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-firebase';
+
+
+ constructor(private fireService:FireService){
+
+ }
+  getAll(){
+  
+  }
 }
