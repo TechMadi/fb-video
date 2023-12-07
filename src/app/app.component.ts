@@ -1,8 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { collectionData } from '@angular/fire/firestore';
-import { Firestore, collection } from 'firebase/firestore';
-import { Observable } from 'rxjs';
-import { FireService } from './firebase/fire.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +6,5 @@ import { FireService } from './firebase/fire.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-firebase';
- newMessage:any;
- email:any
- password:any
- constructor(public fireService:FireService){
 
-
- }
-  getAll(){
-  
-  }
 }
