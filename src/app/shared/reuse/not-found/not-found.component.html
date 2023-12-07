@@ -1,0 +1,17 @@
+
+<div class="grid h-screen">
+  <div class="container mx-auto h-fit my-auto">
+    <div nz-row nzJustify="space-between" nzAlign="middle" class="p-4 my-8">
+      <div nz-col [nzSm]="12" [nzMd]="10"  class="order-2 md:order-1 text-center md:text-left p-4"  >
+        <h1 class="text-6xl font-bold my-4">404</h1>
+        <p class="text-4xl my-4">Whoops! Looks like you got lost</p>
+        <p  class="text-muted text-2xl my-4">We couldn't find what you were looking for.</p>
+        <button nz-button nzType="primary" (click)="goHome()" class="rounded" nzSize="large">Go Back</button>
+      </div>
+      <div nz-col [nzSm]="12" [nzMd]="10" class="order-1 md:order-2">
+        <img src="./assets/Error/error-1.png" alt="Page Not found" class=" mx-auto">
+      </div>
+    </div>
+  </div>
+</div>
+

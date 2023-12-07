@@ -1,0 +1,106 @@
+<div class="container flex min-h-full">
+  <div class="min-h-100  flex flex-col justify-between bg-purple-300 w-1/3 p-4 text-white">
+    <div class="logo mt-8"> FireMadi</div>
+    <div class="content">
+      <h1 class="text-2xl my-4">Exploring Enlink</h1>
+      <p  class="font-medium">Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up.</p>
+    </div>
+    <div class="footer flex justify-between">
+      <p> &copy; 2019 ThemeNate</p>
+      <div class="links flex justify-between px-4">
+        <a href="#" class="px-2  no-underline hover:text-blue-950">Legal</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-form  w-2/3 my-auto text-muted ">
+    <div class="container p-8 w-2/3 mx-auto">
+      <div class="helper my-4">
+        <h2 class="text-2xl  font-semibold my-4">Sign Up</h2>
+        <p class="">Create your account to get access</p>
+      </div>
+        <div nz-row  nzJustify="start" class="my-4">
+          <div nz-col="4" class="mr-4 text-xl">
+            <span nz-icon nzType="google" nzTheme="outline" ></span>
+          </div>
+          <div nz-col="4" class="mr-4 text-xl">
+            <span nz-icon nzType="github" nzTheme="outline"></span>
+          </div>
+          <div nz-col="4" class="mr-4 text-xl">
+            <span nz-icon >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16"> <path d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z"/> </svg>
+            </span>
+          </div>
+
+        </div>
+      <form nz-form nzLayout="vertical"    [formGroup]="registerForm" class="" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="username" >Username</nz-form-label>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <nz-input-group nzPrefixIcon="user" class="rounded  p-2 ">
+              <input type="text" nz-input formControlName="userName" placeholder="Username" class="" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email" >Email</nz-form-label>
+          <nz-form-control nzHasFeedback [nzErrorTip]="emailErrorTpl">
+            <nz-input-group nzPrefixIcon="user" class="rounded  p-2 ">
+              <input type="text" nz-input formControlName="email" placeholder="Email" class="" />
+              <ng-template #emailErrorTpl let-control>
+                <ng-container *ngIf="control.hasError('email')">The input is not valid E-mail!</ng-container>
+                <ng-container *ngIf="control.hasError('required')">Please input your E-mail!</ng-container>
+              </ng-template>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzHasFeedback nzErrorTip="Please input your password!">
+            <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+            <nz-input-group nzPrefixIcon="lock"  class="rounded  p-2 ">
+              <input [type]="hide? 'password':'text'" nz-input formControlName="password" placeholder="Password" (ngModelChange)="validateConfirmPassword()"/>
+
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzHasFeedback [nzErrorTip]="passwordErrorTpl">
+            <nz-form-label nzRequired nzFor="confirmPassword"> Confrim Password</nz-form-label>
+            <nz-input-group nzPrefixIcon="lock" class="rounded  p-2 ">
+              <input type="password" nz-input formControlName="confirmPassword" placeholder="Confirm Password" />
+              <ng-template #passwordErrorTpl let-control>
+                <ng-container *ngIf="control.hasError('required')">Please confirm your password!</ng-container>
+                <ng-container *ngIf="control.hasError('confirm')">Password is inconsistent!</ng-container>
+              </ng-template>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+
+        <div nz-row nzJustify="space-between">
+          <div nz-col="6">
+            <nz-form-item nz-row class="register-area">
+              <nz-form-control>
+                <label nz-checkbox formControlName="agree">
+            <span>
+              I have read the
+              <a>agreement</a>
+            </span>
+                </label>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col="6">
+            <button nz-button class="rounded" [nzType]="'primary'">Sign  Up</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+
+
+  </div>
+
+</div>
